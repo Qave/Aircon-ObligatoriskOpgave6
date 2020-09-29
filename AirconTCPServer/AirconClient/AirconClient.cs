@@ -22,7 +22,7 @@ namespace AirconClient
                     sw.AutoFlush = true;
                     while (true)
                     {
-                        Console.WriteLine("Hent FanOutput målinger, mulige commands: HentAlle, Hent, Gem\n");
+                        Console.WriteLine(sr.ReadLine());
                         try
                         {
                             // Word sent to the server
@@ -35,7 +35,7 @@ namespace AirconClient
                                 case "Hent":
                                     sw.WriteLine(lineSentToServer);
                                     int n;
-                                    Console.WriteLine("Vælg ID:");
+                                    Console.WriteLine(sr.ReadLine());
                                     var id = Console.ReadLine();
                                     if (int.TryParse(id, out n))
                                     {
@@ -44,7 +44,7 @@ namespace AirconClient
                                     break;
                                 case "Gem":
                                     // id, navn, temp, fugt
-                                    Console.WriteLine("Tilføj ny måling via følgende format: Id, Navn, Temp, Fugt");
+                                    Console.WriteLine(sr.ReadLine());
                                     sw.WriteLine(lineSentToServer);
                                     
                                     string objToSave = Console.ReadLine();

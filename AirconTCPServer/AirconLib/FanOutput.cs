@@ -50,7 +50,7 @@ namespace AirconLib
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
-                    throw new ArgumentException("Name is null or empty");
+                    throw new NullReferenceException("Name is null or empty");
                 }
                 else if (value.Length < 2)
                 {
